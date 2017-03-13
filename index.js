@@ -28,6 +28,12 @@ app.get('/', function(req, res, next) {
 	res.send('Homepage')
 })
 
+//ERROR middleware (next(err) gets piped here) ! NEED FOUR ARGUMENTS!!!
+app.use(function(err, req, res, next) {
+	console.error(err);
+	res.status(500).send(err.message);
+})
+
 models.User.sync({force: true})
 .then(function() {
 	return models.Page.sync({force: true})

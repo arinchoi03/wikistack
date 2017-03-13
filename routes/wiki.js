@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
     }
   })
   .then(function(values) {
-    var user = values[0];
+    var user = values[0]; // QUESTION HERE
     var page = Page.build({
       title: req.body.title,
       content: req.body.content
@@ -80,7 +80,7 @@ router.get('/:urlTitle', function(req, res, next) {
   Page.findOne({
     where: {
       urlTitle : req.params.urlTitle
-    }, 
+    },
     include: [{model: User, as: 'author'}]
   })
   .then(function(page) {
@@ -94,6 +94,6 @@ router.get('/users', function(req, res, next) {
   .then(function(users) {
     res.render('author', {authors: users});
   })
-}) 
+})
 
 module.exports = router

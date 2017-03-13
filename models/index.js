@@ -43,8 +43,11 @@ var User = db.define('user', {
 	},
 	email: {
 		type: Sequelize.STRING,
-		allowNull: false,
-		isEmail: true
+		allowNull: false, //database screens
+		unique: true,
+		validate: {
+			isEmail: true //database is not keeping out, but Sequelize is
+		}
 	}
 });
 
