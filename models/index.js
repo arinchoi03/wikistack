@@ -48,6 +48,8 @@ var User = db.define('user', {
 	}
 });
 
+Page.belongsTo(User, {as: 'author'});
+
 module.exports = {
 	Page: Page,
 	User: User

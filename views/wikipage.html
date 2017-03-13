@@ -2,12 +2,12 @@
 
 {% block content %}
 
-  <h3>{{title}}<small> (<a href={{page.urlTitle}}>{{title}}</a>)</small></h3>
-  <h4>by <a href="PLACEHOLDER-AUTHOR-URL">PLACEHOLDER AUTHOR NAME</a></h4>
+  <h3>{{page.title}}<small> (<a href={{page.urlTitle}}>{{page.title}}</a>)</small></h3>
+  <h4>by <a href="PLACEHOLDER-AUTHOR-URL"></a>{{page.author.name}}</h4>
   <div>PLACEHOLDER TAG LIST</div>
   <hr/>
-  <div>PLACEHOLDER AUTHOR NAME WITH LINK TO AUTHOR PAGE</div>
-  <div class="page-body">{{content}}</div>
+  <div>{{page.author.name}}</div>
+  <div class="page-body">{{page.content}}</div>
   <hr/>
   <a href="PLACEHOLDER_URL_TITLE/edit" class="btn btn-primary">edit this page</a>
   <a href="PLACEHOLDER_URL_TITLE/delete" class="btn btn-danger">delete this page</a>
